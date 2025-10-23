@@ -18,15 +18,20 @@ export default function UserFormContainer() {
     const newErrors = {};
     if (name.trim() === "") newErrors.name = "El nombre de jugador es requerido";
     if (birthday.trim() === "") newErrors.birthday = "La fecha de nacimiento es requerida";
-    else if (isNaN(Date.parse(birthday))) newErrors.birthday = "Fecha inválida";
+  else if (!/^(0[1-9]|1[0-2])-\d{2}$/.test(birthday)) newErrors.birthday = "Formato debe ser MM-DD (mes 01-12)";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
+  // manejar cambio de nombre
   const handleNameChange = (e) => setName(e.target.value);
+  
+  //  manejar cambio de cumpleaños
   const handleBirthdayChange = (e) => setBirthday(e.target.value);
 
   const handleClick = async (action) => {
+    // validar formulario
+    // valida el nombre y cumpleaños en formato MM-DD
     if (!validateForm()) return;
 
     const newPlayer = {
@@ -43,7 +48,7 @@ export default function UserFormContainer() {
         // actualiza contexto
         updatePlayer(fullPlayer);
       
-        // 🔐 guarda identidad y datos en *sessionStorage*
+        // guarda identidad y datos en *sessionStorage*
         sessionStorage.setItem("current_player_id", resp.id);     // ← usar resp
         sessionStorage.setItem("current_player", JSON.stringify(fullPlayer));
       
@@ -71,7 +76,8 @@ export default function UserFormContainer() {
 
       <div className='inputfield'>
         <label className='label'>Fecha de nacimiento</label>
-        <Input type='date' id='date' className='input' onChange={handleBirthdayChange} />
+        <Input type='text' id='date' className='input' placeholder='MM-DD' 
+          maxLength={5} onChange={handleBirthdayChange} />
         {errors.birthday && <p className="error">{errors.birthday}</p>}
       </div>
 
