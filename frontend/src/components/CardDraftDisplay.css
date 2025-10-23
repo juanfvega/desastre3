@@ -1,0 +1,37 @@
+.draft-area {
+    /* 1. Posicionamiento: Debe ser absoluta respecto a game-table-container */
+    position: absolute; 
+    
+    /* 2. Superposición: Asegura que esté por encima de la mesa (se-table) */
+    z-index: 100; 
+
+    /* 3. Centrado Horizontal: */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el elemento en sí */
+
+    /* 4. Posición Vertical: Ajusta este valor para moverlo hacia arriba o abajo */
+    top: 150px; /* Ejemplo: 150px desde la parte superior del contenedor de la mesa */
+}
+/* Contenedor principal del Draft */
+.draft-cards-list img {
+    width: 100px; /* Tamaño deseado para la carta en el draft */
+    height: auto;
+    /* Asegúrate de que no tenga bordes ni sombras de otros selectores */
+}
+
+/* Contenedor de la lista de cartas (el Flexbox) */
+.draft-cards-list {
+    display: flex;
+    /* Separación entre las cartas */
+    gap: 15px; 
+    /* Alinear las cartas al centro del contenedor */
+    justify-content: center; 
+}
+
+/* Estilos de las cartas individuales dentro del draft (opcional) */
+/* Si necesitas que las cartas sean más pequeñas que tu mano principal */
+.draft-cards-list .card-image-container {
+    width: 200px; /* Ajusta este ancho según tu diseño */
+    height: auto;
+    overflow: hidden;
+}

@@ -1,0 +1,73 @@
+.card-detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Fondo semi-transparente que oscurece el fondo */
+    background-color: rgba(0, 0, 0, 0.85); 
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    z-index: 2000;
+}
+
+.card-detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Establece un tamaño máximo para que ocupe gran parte de la pantalla */
+    max-width: 35vw;
+    max-height: 24vh;
+    padding: 15px; /* Pequeño padding alrededor de la carta y botones */
+    background: transparent; /* El fondo se manejará por la superposición */
+    border-radius: 12px;
+}
+
+.card-detail-image-wrapper {
+    /* Contenedor de la imagen para controlar su tamaño */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 90%; /* La imagen ocupa la mayor parte de la altura */
+    max-width: 100%;
+}
+
+.card-detail-image {
+    /* La imagen se ajusta al contenedor */
+    max-width: 40%;
+    max-height: 40%;
+    object-fit: contain; /* Asegura que la imagen completa sea visible */
+    border: 8px solid rgb(255, 0, 0); /* Borde para resaltar la carta */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+/* Estilos de los Botones */
+.card-detail-buttons {
+    /* Los botones deben estar pegados directamente debajo de la imagen */
+    display: flex;
+    gap: 10px;
+    margin-top: 15px; /* Un pequeño espacio entre la carta y los botones */
+    width: 100%;
+    justify-content: center;
+    /* Para que los botones se peguen debajo de la imagen, su tamaño debe ser fijo: */
+    flex-shrink: 0; 
+}
+
+.detail-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e4176cd8; /* Fondo de temática de cartas */
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.detail-button:hover {
+    background-color:  #7e0738ee;
+}

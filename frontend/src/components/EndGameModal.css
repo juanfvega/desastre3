@@ -1,0 +1,68 @@
+/* Fondo semitransparente para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Contenedor principal del modal */
+.modal-content.game-end-modal {
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+  animation: fadeInScale 0.4s ease-out;
+}
+
+/* Título */
+.modal-content.game-end-modal h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #ff4d4d;
+}
+
+/* Texto del cuerpo */
+.modal-content.game-end-modal p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Botón de cerrar */
+.modal-content.game-end-modal .game-button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-content.game-end-modal .game-button:hover {
+  background-color: #e63b3b;
+}
+
+/* Animación de entrada */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

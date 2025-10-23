@@ -1,0 +1,358 @@
+.game-button-view-sets {
+  position: fixed;
+  bottom: 200px;
+  right: 40px;
+  background: linear-gradient(145deg, #D32F2F, #F44336);
+  color: white;
+  border-color: #B71C1C;
+}
+
+.game-button-view-sets:hover {
+  background: linear-gradient(145deg, #F44336, #FF5722);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+/* Estilos específicos para el componente InGame - SOLO UI ELEMENTS */
+
+/* Información del turno - parte superior con margen para no tapar cartas */
+.game-turn-info {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  max-width: 90vw;
+  /* Asegurar que no tape las cartas de arriba */
+  margin-bottom: 20px;
+}
+
+/* Container de botones - esquina inferior izquierda, uno arriba del otro */
+.game-buttons-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+/* Estilos base para botones del juego */
+.game-button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  min-width: 160px;
+  text-align: center;
+  border: 2px solid;
+  outline: none;
+  white-space: nowrap;
+}
+
+/* Botón ver secretos - estilo marrón como en la captura */
+.game-button-secrets {
+  background: linear-gradient(145deg, #8B4513, #A0522D);
+  color: #FBE9B9;
+  border-color: #D2691E;
+}
+
+.game-button-secrets:hover {
+  background: linear-gradient(145deg, #A0522D, #CD853F);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-button-secrets:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* Estilos de los Botones */
+.card-detail-buttons {
+    /* Los botones deben estar pegados directamente debajo de la imagen */
+    display: flex;
+    gap: 10px;
+    margin-top: 15px; /* Un pequeño espacio entre la carta y los botones */
+    width: 100%;
+    justify-content: center;
+    /* Para que los botones se peguen debajo de la imagen, su tamaño debe ser fijo: */
+    flex-shrink: 0; 
+}
+
+.detail-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e4176cd8; /* Fondo de temática de cartas */
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.detail-button:hover {
+    background-color:  #7e0738ee;
+}
+/* Botón no ejecutar acción - estilo rojo como en la captura */
+.game-button-no-action {
+  background: linear-gradient(145deg, #D32F2F, #F44336);
+  color: white;
+  border-color: #B71C1C;
+}
+
+.game-button-no-action:hover {
+  background: linear-gradient(145deg, #F44336, #FF5722);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-button-no-action:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-button-end-turn {
+  background: linear-gradient(145deg, #D32F2F, #F44336);
+  color: white;
+  border-color: #B71C1C;
+
+}
+
+.game-button-end-turn:hover {
+  background: linear-gradient(145deg, #F44336, #FF5722);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design Mejorado */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+  .game-turn-info {
+    top: 8px;
+    max-width: 85vw;
+  }
+
+  .game-buttons-container {
+    bottom: 18px;
+    left: 18px;
+    gap: 10px;
+  }
+
+  .game-button {
+    padding: 9px 16px;
+    font-size: 13px;
+    min-width: 150px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .game-turn-info {
+    top: 6px;
+    max-width: 90vw;
+  }
+
+  .game-buttons-container {
+    bottom: 15px;
+    left: 15px;
+    gap: 10px;
+  }
+
+  .game-button {
+    padding: 8px 14px;
+    font-size: 12px;
+    min-width: 140px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+  .game-turn-info {
+    top: 5px;
+    max-width: 95vw;
+  }
+
+  .game-buttons-container {
+    bottom: 12px;
+    left: 12px;
+    gap: 8px;
+  }
+
+  .game-button {
+    padding: 7px 12px;
+    font-size: 11px;
+    min-width: 130px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .game-turn-info {
+    top: 4px;
+    max-width: 98vw;
+  }
+
+  .game-buttons-container {
+    bottom: 10px;
+    left: 10px;
+    gap: 6px;
+  }
+
+  .game-button {
+    padding: 6px 10px;
+    font-size: 10px;
+    min-width: 120px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .game-buttons-container {
+    bottom: 8px;
+    left: 8px;
+    gap: 5px;
+  }
+
+  .game-button {
+    padding: 5px 8px;
+    font-size: 9px;
+    min-width: 110px;
+  }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1400px) {
+  .game-turn-info {
+    top: 15px;
+  }
+
+  .game-buttons-container {
+    bottom: 25px;
+    left: 25px;
+    gap: 15px;
+  }
+
+  .game-button {
+    padding: 12px 22px;
+    font-size: 16px;
+    min-width: 180px;
+  }
+}
+
+/* Estilos para orientación landscape en móviles - ajustar posiciones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .game-turn-info {
+    top: 3px;
+    transform: translateX(-50%) scale(0.85);
+  }
+
+  .game-buttons-container {
+    bottom: 6px;
+    left: 6px;
+    gap: 4px;
+  }
+
+  .game-button {
+    padding: 4px 8px;
+    font-size: 9px;
+    min-width: 100px;
+  }
+}
+
+/* Ajustes específicos para evitar solapamiento con cartas */
+@media (max-height: 600px) {
+  .game-turn-info {
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+@media (max-height: 450px) {
+  .game-turn-info {
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+
+/* Asegurar que los elementos del juego no interfieran con la mesa */
+.game-overlay-element {
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* Mejorar legibilidad en pantallas pequeñas */
+@media (max-width: 768px) {
+  .game-button {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-width: 1px;
+  }
+  
+  .game-button:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Animaciones suaves para transiciones */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.game-turn-info {
+  animation: fadeInTop 0.5s ease-out;
+}
+
+.game-buttons-container {
+  animation: fadeInLeft 0.5s ease-out;
+}
+
+.display-containter{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  left: 800px;
+  display: flex;
+ 
+ 
+ 
+ 
+
+}
+.se-table { position: relative; }
+.se-seat {
+  position: absolute;
+  min-width: 120px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+}
+.se-seat-name { display: block; font-size: 14px; }
+.se-seat-badge { font-size: 11px; opacity: 0.8; }

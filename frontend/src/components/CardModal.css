@@ -1,0 +1,219 @@
+.cards-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent; /*rgba(0, 0, 0, 0.8)*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+.cards-modal {
+  /* ... (estilos existentes) ... */
+  background: url('/fondo_policial.jpeg'); /* Ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center ; /* Centra la imagen */
+  background-repeat: no-repeat;
+  background-size:90% 120% ;
+  margin-top: 460px;
+  /* Quita los degradados y el color de fondo anteriores */
+
+   max-width: 150vw; 
+   width: 6000px; /* Puedes ajustar este valor según tus necesidades */
+   height: 40vh;
+
+}
+
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.cards-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="modalGrain" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="12.5" cy="12.5" r="0.5" fill="%23ffffff" opacity="0.03"/><circle cx="37.5" cy="37.5" r="0.5" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23modalGrain)"/></svg>');
+  pointer-events: none;
+  z-index: 100000;
+}
+
+.cards-modal > * {
+  position: relative;
+  z-index: 2000;
+}
+
+.cards-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  /*border-bottom: 2px solid rgb(87, 21, 18);*/
+  background: rgba(139, 69, 19, 0.1);
+}
+
+
+
+.cards-modal-close {
+  background: none;
+  border: none;
+  color: rgba(251, 233, 185);
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.cards-modal-close:hover {
+  background: rgba(255, 217, 0, 0.034);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.cards-modal-content {
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding: 0px;
+  max-height: 100%;
+
+  display: flex;
+  flex-direction: column; 
+}
+
+.cards-grid {
+     display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    transform: translateY(65px);
+    
+    
+    /* Configuración del SCROLL (YA EXISTENTES) */
+    overflow-x: scroll; 
+    padding-bottom: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    /* --- PROPIEDADES CRÍTICAS PARA EL FONDO --- */
+    
+    /* 1. Definir la altura visible del fondo */
+    height: 500px; /* Debe ser un poco más alto que las cartas (250px) */
+    
+    /* 2. Aplicar el fondo con repetición */
+    background-image: url('/ruta/correcta/a/fondo_policial.jpeg');
+    background-repeat: repeat-x; /* Repite solo horizontalmente, siguiendo el crecimiento de la fila */
+    background-size: auto 100%; /* El ancho se ajusta automáticamente a la repetición; la altura cubre el 100% de la franja */
+    background-position: center center; /* O donde desees que inicie el patrón */
+
+    /* Asegura que las cartas se centren dentro de esta franja de fondo */
+    align-items: flex-start;
+    justify-content: center;
+      
+}
+
+
+
+.cards-modal-footer {
+  padding: 16px 24px;
+  /*border-top: 1.5px solid rgb(87, 21, 18);*/
+  background: rgba(139, 69, 19, 0.05);
+  display: flex;
+  justify-content: center;
+}
+
+.card-image-container { /* Ajusta el ancho para que quepan más en la pantalla */
+  max-width: 120px;
+  height: 145px; /* Ajusta la altura proporcionalmente */
+  flex-shrink: 0;
+}
+
+.close-button {
+  background: linear-gradient(135deg, rgb(37, 84, 172));
+  border: 2px solid rgb(87, 21, 18);
+  color: rgba(251, 233, 185);
+  padding: 12px 24px;
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  min-width: 120px;
+}
+
+.close-button:hover {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, rgba(131, 4, 4, 0.05) 100%);
+  border-color: rgba(251, 233, 185);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(19, 15, 11);
+}
+
+/* Scrollbar styling for the modal content */
+.cards-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(251, 233, 185);
+  border-radius: 4px;
+}
+
+.cards-modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgb(67, 143, 241);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cards-modal {
+    width: 95vw;
+    margin: 10px;
+  }
+  
+  
+  .cards-modal-header {
+    padding: 16px 20px;
+  }
+  
+
+  
+  .cards-modal-content {
+    padding: 20px;
+    max-height: 350vh;
+    display: flex; 
+  }
+}
+
+@media (max-width: 480px) {
+
+  
+  .cards-modal-content {
+    padding: 16px;
+  }
+}

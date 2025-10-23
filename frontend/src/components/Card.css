@@ -1,0 +1,43 @@
+.card-image-container {
+  border: 5.9px solid rgb(230, 82, 62);
+  border-radius: 14px;
+  padding: 6px;
+  margin: 8px;
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.637); 
+  margin-bottom: 100px;
+  overflow: hidden;
+  width: 290px; /* Ajusta el tamaño de la carta como necesites */
+  height: 390px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.border-blue {
+    border-color: #2e31f7; /* Azul para detective */
+    box-shadow: 0 0 15px rgb(6, 37, 87); /* Sombra para resaltar */
+}
+
+.border-purple {
+    border-color: #8109c7; /* Morado para devious */
+    box-shadow: 0 0 15px hwb(278 1% 75%)(239, 68, 68, 0.7); 
+}
+
+.border-green {
+    border-color: #10b981; /* Verde para evento */
+    box-shadow: 0 0 15px rgb(7, 88, 61);
+}
+.border-green-oil {
+    border-color: #195810; /* Verde peroleo para notsofast */
+    box-shadow: 0 0 15px #13470d;
+}
+/* Imagen de la carta en sí */
+.card-image-png {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Efecto hover */
+.card-image-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
